@@ -5,3 +5,5 @@
 ## Documentation
 
 A personal boilerplate, see [docs](https://mv3.dev/start-django).
+
+Live demo at [start-django.fly.dev](https://start-django.fly.dev).
