@@ -1,0 +1,16 @@
+- model: pages.agreement
+  fields:
+    title: Default Terms and Conditions
+    description: This can be initialzed
+    text: |
+      This is a sample agreement.
+    version: 1-0-0 # translates to version 1.0.0
+    category: terms
+- model: pages.agreement
+  fields:
+    title: Privacy Policy
+    description: Another thing to worry about
+    text: |
+      This is a sample policy.
+    version: 1-0-0 # translates to version 1.0.0
+    category: privacy

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Signup" %}{% endblock title %}
+{% block content %}
+  {% trans "Sign Up" as heading %}
+  {% blocktrans asvar caption with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to {{site_name}}. As a final step, please complete the following form:{% endblocktrans %}
+  {% include 'text/header_fragment.html' with heading=heading caption=caption cta="socialaccount/_custom/_signup_cta.html" %}
+{% endblock content %}

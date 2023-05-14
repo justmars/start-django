@@ -1,0 +1,16 @@
+{% load fragments %}
+<a type="button" class="btn" data-btn="danger" href="#del-user">Delete</a>
+<section id="del-user" class="relative invisible z-10 opacity-0 transition-all duration-300 group target:visible target:opacity-100" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="overflow-y-auto fixed inset-0 z-10">
+    <div class="flex justify-center items-end p-4 min-h-full text-center sm:items-center sm:p-0">
+      <a href="#" class="block fixed inset-0 bg-opacity-75 transition-opacity cursor-default bg-black/50"><span class="sr-only">Close Modal</span></a>
+      <div class="overflow-hidden relative text-left bg-white rounded-lg shadow-xl opacity-0 transition-all duration-300 transform scale-90 sm:my-8 sm:w-full sm:max-w-lg group-target:scale-100 group-target:opacity-100 dark:bg-grayed">
+        {% include 'text/header_modal.html' with heading='Confirm Deletion' caption="Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone." icon_name='exclamation_triangle' icon_css="h-6 w-6 text-red-600 dark:text-red-100" background_icon_css="bg-red-100 dark:bg-red-600" %}
+        <div class="gap-2 py-3 px-4 bg-gray-50 sm:flex sm:flex-row-reverse sm:px-6 dark:bg-gray-600">
+          <button class="btn" data-btn="danger" hx-post='profiles:hx_del_user_post' hx-target="body">Delete</button>
+          <a type="button" class="btn" href="#">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

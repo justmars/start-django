@@ -1,0 +1,7 @@
+.env
+compose.yml
+*/.sqlite-*
+*/.db*
+src/.coverage
+src/staticfiles
+src/mediafiles

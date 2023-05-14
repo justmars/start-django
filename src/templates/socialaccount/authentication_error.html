@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Social Network Login Failure" %}{% endblock title %}
+
+{% block content %}
+  {% trans "Social Network Login Failure" as heading %}
+  {% trans "An error occurred while attempting to login via your social network account." as caption %}
+  {% include 'text/header_fragment.html' with heading=heading caption=caption %}
+{% endblock content %}

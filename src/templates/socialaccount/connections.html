@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n start fragments %}
+{% block content %}
+  {% trans "Social Login" as heading %}
+  {% if form.accounts %}
+    {% include 'profiles/tabs/tab_settings.html' with tab_panel_template="socialaccount/_custom/_connections_cta.html" %}
+  {% else %}
+    {% trans 'You currently have no social network accounts connected to this account.' as caption %}
+    {% include 'profiles/tabs/tab_settings.html' with tab_panel_template="socialaccount/_custom/_connections_cta_add_social_form.html" %}
+  {% endif %}
+{% endblock content %}

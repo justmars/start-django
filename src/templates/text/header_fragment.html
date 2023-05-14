@@ -1,0 +1,20 @@
+{# Reusable template for centered announcements and forms. #}
+<div class="relative px-6 mx-auto max-w-xl lg:px-8 isolate">
+  <div class="flex flex-col justify-center min-h-full lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+      <div class="mx-auto text-center">
+        <header class="py-5">
+          <h2 class="{{heading_css|default:'text-3xl font-bold tracking-tight sm:text-4xl text-dawn-darker/90 dark:text-fuchsia-400/90'}}">{{heading}}</h2>
+          {% if caption %}<p class="{{caption_css|default:'my-1 sm:my-4 text-lg/6 sm:text-lg/8 text-grayed-muted'}}">{{caption}}</p>{% endif %}
+        </header>
+      </div>
+      {% if cta %}
+        <div class="shadow sm:mt-8 sm:rounded-lg dark:shadow-sm dark:shadow-slate-800">
+          <div class="py-6 px-4">
+            {% include cta %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

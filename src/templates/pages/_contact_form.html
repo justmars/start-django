@@ -1,0 +1,15 @@
+{% load i18n start fragments widget_tweaks %}
+<form>
+  {% csrf_token %}
+  {% url 'pages:contact' as target_hx_url %}
+  <div class="flex flex-col gap-4 justify-evenly">
+    {% sel form.category idx='dwnr' %}
+    {% hput form.email kls='fx' validate=target_hx_url %}
+    {% hput form.message kls="fx" %}
+  </div>
+  <div class="mt-8">
+    <button class="w-full btn" data-btn="primary" hx-post="{{target_hx_url}}" hx-target='#contact-form-area'>
+      Let's Talk
+    </button>
+  </div>
+</form>

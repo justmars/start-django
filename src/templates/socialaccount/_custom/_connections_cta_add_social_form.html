@@ -1,0 +1,10 @@
+{% load i18n start %}
+<div class="mt-10 rounded-lg shadow-sm dark:shadow-sm dark:shadow-slate-600">
+  <div class="py-6 px-4">
+    {% trans "Account Connections" as heading %}
+    {% trans 'Add a third-party social login' as caption %}
+    {% include 'text/header.html' with heading=heading caption=caption %}
+    <ul>{% include "socialaccount/snippets/provider_list.html" with process="connect" %}</ul>
+    {% include "socialaccount/snippets/login_extra.html" %}
+  </div>
+</div>

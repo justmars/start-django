@@ -1,0 +1,66 @@
+{% load static fragments start %}
+<div hidden id="mobile-menu" role="dialog" aria-modal="true">{# mobile menu: hidden on large view ports #}
+  <div class="overflow-y-auto fixed inset-0 z-10 py-6 px-8 lg:hidden bg-grayed-lighter dark:bg-grayed">
+    <div class="flex justify-between items-center">
+      <button _="on click toggle @hidden on #mobile-menu end" type="button" class="p-2.5 -m-2.5 text-gray-700 rounded-md dark:text-grayed-lighter">
+        {% icon name='x_mark_mini' pre_text="Close menu" aria_hidden="true" pre_class="sr-only" %}
+      </button>
+    </div>
+    <div class="flex flex-col py-6 space-y-2">
+      {% nava 'pages:home' 'Home' css='burger' request=request %}
+      {% nava 'pages:popular' 'Popular' css='burger' request=request %}
+      {% nava 'pages:contact' 'Contact' css='burger' request=request %}
+    </div>
+  </div>
+</div>
+<div aria-hidden="true" class="overflow-hidden absolute inset-x-0 transform-gpu top-[-10rem] -z-10 blur-3xl sm:top-[-20rem]">{# generic gradient #}
+  <svg class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]" viewBox="0 0 1155 678">
+    <path fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)" fill-opacity=".3" d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z" />
+    <defs>
+      <linearGradient id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533" x1="1155.49" x2="-78.208" y1=".177" y2="474.645" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#9089FC" />
+        <stop offset="1" stop-color="#FF80B5" />
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+<nav class="flex justify-between items-center" aria-label="main-nav">{# if more than <nav> element in a document, provide a label #}
+  <div class="hidden ml-3 lg:flex lg:flex-1">
+    {% icon name='forward' css='icon' parent_tag="a" parent_class="desktop" parent_href="/" %}{# home icon #}
+  </div>
+  <div class="flex ml-4 lg:hidden">
+    <button type="button" class="rounded-md" _="on click toggle @hidden on #mobile-menu end">
+      {% icon name='bars_3' css='icon' pre_text="Open main menu" pre_class="sr-only" aria_hidden="true" %}
+    </button>{# lg-view: burger ('bars_3') hidden; else burger replaces home icon, visually #}
+  </div>
+  <div class="hidden lg:flex lg:gap-x-12">
+    {% nava 'pages:popular' 'Popular' css="desktop" request=request %}
+    {% nava 'pages:contact' 'Contact' css="desktop" request=request %}
+  </div>{# desktop links; hidden on small view ports. visible mobile links on burger icon click #}
+  <div class="flex gap-2 items-center mr-4 lg:flex-1 lg:justify-end">{# right edge of desktop / mobile nav #}
+    {% themer icon1_name="sun" icon1_css="dark:hidden icon" icon2_name="moon" icon2_css="hidden dark:block icon" btn_kls="desktop flex justify-center items-center rounded-md transition" %}
+    {% static "img/smiler.png" as default_img %}
+    {% if not request.user.is_authenticated %}
+      {% nava 'account_login' 'Login' css='desktop' request=request %}
+    {% else %} {# see django-fragments' _nav.html #}
+      <div id="auth-menu" class="relative ml-3" _="on load js doMenu('auth-menu') end end">
+        <button class="desktop">
+          <span class="sr-only">Open user menu</span>
+          {% if user.profile.image_url != default_img %}<img class="w-6 h-6 rounded-full sm:w-8 sm:h-8" src="{{user.profile.image_url|variant:'avatar'}}" alt="{{user.profile.fullname}}">
+          {% else %}{% icon name='user' css='icon' %}{% endif %}
+        </button>
+        <ul hidden role="menu" class="absolute right-0 z-10 py-1 mt-2 w-48 rounded-md ring-1 ring-black ring-opacity-5 shadow-lg transition duration-200 ease-out transform origin-top-right scale-95 cursor-pointer focus:outline-none bg-slate-100 dark:bg-grayed-darker">
+          <li class="block py-2 px-4 text-sm text-grayed-darker data-[ok=true]:text-white data-[ok=true]:bg-dawn dark:text-grayed-lighter dark:data-[ok=true]:bg-dusk">
+            <a href="{% url 'profiles:settings' %}" role="menuitem" tabindex="-1">Private Settings</a>
+          </li>
+          <li class="block py-2 px-4 text-sm text-grayed-darker data-[ok=true]:text-white data-[ok=true]:bg-dawn dark:text-grayed-lighter dark:data-[ok=true]:bg-dusk">
+            <a href="{% url 'profiles:detail' user.username %}" role="menuitem" tabindex="-1">Public Profile</a>
+          </li>
+          <li class="block py-2 px-4 text-sm text-grayed-darker data-[ok=true]:text-white data-[ok=true]:bg-dawn dark:text-grayed-lighter dark:data-[ok=true]:bg-dusk">
+            <a href="{% url 'account_logout' %}" role="menuitem" tabindex="-1">Logout</a>
+          </li>
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</nav>

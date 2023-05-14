@@ -1,0 +1,11 @@
+{% load socialaccount start fragments %}
+<div class="grid grid-cols-1 gap-3 mt-6 sm:grid-cols-2">
+  <a href="{% provider_login_url 'google' process=process scope=scope auth_params=auth_params %}"
+     class="inline-flex gap-x-2 justify-center items-center py-2.5 px-3.5 text-sm font-semibold text-white rounded-md shadow-sm focus:rounded-md focus:ring-2 focus:ring-offset-4 focus:ring-offset-green-300 focus:outline-none bg-zinc-900 dark:bg-grayed-darker dark:hover:bg-purple-600 dark:focus:ring-dusk dark:focus:ring-offset-purple-300 hover:bg-dawn focus:ring-dawn">
+    {% icon name="google" prefix="bootstrap" css="h-5 w-5" pre_text="Sign in with Google" pre_class="sr-only" %}
+  </a>
+  <a href="{% provider_login_url 'github' process=process scope=scope auth_params=auth_params %}"
+     class="inline-flex gap-x-2 justify-center items-center py-2.5 px-3.5 text-sm font-semibold text-white rounded-md shadow-sm focus:rounded-md focus:ring-2 focus:ring-offset-4 focus:ring-offset-green-300 focus:outline-none bg-zinc-900 dark:bg-grayed-darker dark:hover:bg-purple-600 dark:focus:ring-dusk dark:focus:ring-offset-purple-300 hover:bg-dawn focus:ring-dawn">
+    {% icon name="github" prefix="bootstrap" css="h-5 w-5" pre_text="Sign in with Github" pre_class="sr-only" %}
+  </a>
+</div>

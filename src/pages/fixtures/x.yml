@@ -1,0 +1,200 @@
+- created_at: '2011-02-11T18:03:20Z'
+  description: The Django Base Site is a Django site that is built using the best
+    Django practices and comes with all the common Django packages that you need to
+    jumpstart your next project.
+  id: 1
+  license: mit
+  og_image: https://opengraph.githubassets.com/0ab29169d9a73535a2b386125a02d79d7bae35b603a4fa3dc322fd877004da4d/epicserve/django-base-site
+  owner_name: epicserve
+  repo_name: django-base-site
+  timestamp: '2023-05-14T00:31:16.012269'
+  topics_list: '["boilerplate","django","python","starter-template","tools","vite"]'
+  updated_at: '2023-05-12T16:38:40Z'
+- created_at: '2018-02-15T17:29:07Z'
+  description: "Django starter project with \U0001F50B"
+  id: 2
+  license: other
+  og_image: https://repository-images.githubusercontent.com/121658961/69104980-8943-11e9-82d7-8db2ae42b29f
+  owner_name: wsvincent
+  repo_name: djangox
+  timestamp: '2023-05-14T00:31:17.464070'
+  topics_list: '["django","python","starter-template","allauth","docker","whitenoise"]'
+  updated_at: '2023-05-13T13:43:17Z'
+- created_at: '2018-02-10T15:38:30Z'
+  description: ':checkered_flag: Django Start Project template with batteries'
+  id: 3
+  license: bsd-3-clause
+  og_image: https://opengraph.githubassets.com/e3ed569bd64a46c074626b578f36066b9d3330195cb7ea0e27edf7c5f1dcd200/jefftriplett/django-startproject
+  owner_name: jefftriplett
+  repo_name: django-startproject
+  timestamp: '2023-05-14T00:31:19.229543'
+  topics_list: '["django","project","startproject"]'
+  updated_at: '2023-05-11T16:32:38Z'
+- created_at: '2017-09-14T09:23:23Z'
+  description: Bleeding edge django template focused on code quality and security.
+  id: 4
+  license: mit
+  og_image: https://opengraph.githubassets.com/c7d49ea30450fe30642f27dbd20c0231763c0569f19ca824722fa0c88e25fc96/wemake-services/wemake-django-template
+  owner_name: wemake-services
+  repo_name: wemake-django-template
+  timestamp: '2023-05-14T00:31:20.779411'
+  topics_list: '["django","python","docker","caddy","cookiecutter","cookiecutter-template","gitlab-ci","mypy","pytest","python3"]'
+  updated_at: '2023-05-13T07:30:15Z'
+- created_at: '2020-12-01T01:12:44Z'
+  description: This is a fully runnable Django application, along with valid configuration
+    for a number of helpful addons. This is intended to be a reference for both new
+    and existing Django projects.
+  id: 5
+  license: mit
+  og_image: https://opengraph.githubassets.com/4c57b413a32f4ac9a7785274c1470d89dd5e4d688de3e79d13cbd7f158a63673/zagaran/sample-django-app
+  owner_name: zagaran
+  repo_name: sample-django-app
+  timestamp: '2023-05-14T00:31:22.300138'
+  topics_list: '["django","python"]'
+  updated_at: '2023-04-30T21:15:06Z'
+- created_at: '2021-12-01T10:56:48Z'
+  description: An opinionated SaaS starter for Django
+  id: 6
+  license: mit
+  og_image: https://opengraph.githubassets.com/49ab7e6632349afd48692ec1e5f12bc6bf780870f6d77fd62e27bda124c845fa/joseferben/schablone
+  owner_name: joseferben
+  repo_name: schablone
+  timestamp: '2023-05-14T00:31:23.750974'
+  topics_list: '["django","python","cookiecutter","huey","litestream","sqlite","sqlite3","tailwind"]'
+  updated_at: '2023-05-10T09:15:23Z'
+- created_at: '2021-02-24T21:20:34Z'
+  description: A production ready example Django app that's using Docker and Docker
+    Compose.
+  id: 7
+  license: mit
+  og_image: https://opengraph.githubassets.com/8899fd63902aed7f144cac46e1b4fb3c13fb34a4807ce8348b5f7622ca055c5d/nickjj/docker-django-example
+  owner_name: nickjj
+  repo_name: docker-django-example
+  timestamp: '2023-05-14T00:31:25.387246'
+  topics_list: '["django","docker","celery","docker-compose","esbuild","postgres","redis","tailwindcss"]'
+  updated_at: '2023-05-13T07:58:08Z'
+- created_at: '2023-03-14T16:43:59Z'
+  description: Bring the power of Svelte to your Django projects.
+  id: 8
+  license: null
+  og_image: https://opengraph.githubassets.com/a80b6590e6c9e0ef51f5685a4654c6828241fe170d6c7f3872b32caa0e8e3a2e/emmyarty/dxsvelte
+  owner_name: emmyarty
+  repo_name: dxsvelte
+  timestamp: '2023-05-14T00:31:26.948729'
+  topics_list: '[]'
+  updated_at: '2023-05-11T11:20:30Z'
+- created_at: '2018-07-08T18:14:47Z'
+  description: null
+  id: 9
+  license: mit
+  og_image: https://opengraph.githubassets.com/4eee91e6ec8c2cc09db5be592488482180d0fb8987c12378c74fb30403f5bfed/silviogutierrez/reactivated
+  owner_name: silviogutierrez
+  repo_name: reactivated
+  timestamp: '2023-05-14T00:31:28.436252'
+  topics_list: '[]'
+  updated_at: '2023-05-12T16:49:31Z'
+- created_at: '2019-06-30T03:31:46Z'
+  description: SOS Django Template is a starter template for new Django projects with
+    modern defaults, power cable included.
+  id: 10
+  license: wtfpl
+  og_image: https://opengraph.githubassets.com/7a6d2c3a6103cc2678de70afb8169ef4882801fd98e939ee9b8b46f1e6307a06/erayerdin/sos-django-template
+  owner_name: erayerdin
+  repo_name: sos-django-template
+  timestamp: '2023-05-14T00:31:30.032614'
+  topics_list: '["django","python","template"]'
+  updated_at: '2023-03-03T01:47:58Z'
+- created_at: '2020-06-19T07:34:11Z'
+  description: Repository for example styleguide project
+  id: 11
+  license: mit
+  og_image: https://opengraph.githubassets.com/8eb319c2419dd21858a3cfda29bb9b59681b1db859738e670a4f29e45a20dbcd/HackSoftware/Django-Styleguide-Example
+  owner_name: HackSoftware
+  repo_name: Django-Styleguide-Example
+  timestamp: '2023-05-14T00:31:31.433958'
+  topics_list: '[]'
+  updated_at: '2023-05-10T18:44:25Z'
+- created_at: '2013-08-14T17:43:31Z'
+  description: Cookiecutter Django is a framework for jumpstarting production-ready
+    Django projects quickly.
+  id: 12
+  license: bsd-3-clause
+  og_image: https://opengraph.githubassets.com/a5f2fb76dc4d4cffd84f147b5d186f349e25d3bd4320b8c5a4f98c49f0a43786/cookiecutter/cookiecutter-django
+  owner_name: cookiecutter
+  repo_name: cookiecutter-django
+  timestamp: '2023-05-14T00:31:33.054481'
+  topics_list: '["boilerplate","django","python","docker","cookiecutter","celery","cookiecutter-django","django-cookiecutter","heroku","project-template"]'
+  updated_at: '2023-05-13T15:32:42Z'
+- created_at: '2013-11-04T15:53:38Z'
+  description: A django/htmx/alpine/tailwind project template
+  id: 13
+  license: null
+  og_image: https://opengraph.githubassets.com/22197da4542ea6afe03c4c991eba341f5f69fc5a9890b2256bc758c83418157a/Lightmatter/django-hydra
+  owner_name: Lightmatter
+  repo_name: django-hydra
+  timestamp: '2023-05-14T00:31:34.593692'
+  topics_list: '[]'
+  updated_at: '2023-05-12T02:09:24Z'
+- created_at: '2022-06-13T21:48:04Z'
+  description: Starter template for new Django projects using Forge.
+  id: 14
+  license: null
+  og_image: https://opengraph.githubassets.com/c1c384e1237975182d1a310543f78122294cbb8583bba4c5c1f958b9d7d76ea7/forgepackages/starter-template
+  owner_name: forgepackages
+  repo_name: starter-template
+  timestamp: '2023-05-14T00:31:36.167352'
+  topics_list: '["django","starter-template","forge"]'
+  updated_at: '2022-12-23T19:40:42Z'
+- created_at: '2018-05-03T13:54:51Z'
+  description: Production ready django based starter kit
+  id: 15
+  license: mit
+  og_image: https://opengraph.githubassets.com/dc379768b7ab07c3ced40cc90aa295c24da0b934ae2222de16722d8d3b462e05/SystangoTechnologies/DjangoUnboxed
+  owner_name: SystangoTechnologies
+  repo_name: DjangoUnboxed
+  timestamp: '2023-05-14T00:31:37.737820'
+  topics_list: '["django","python3","django-rest-framework"]'
+  updated_at: '2023-04-16T17:19:06Z'
+- created_at: '2023-03-04T10:37:57Z'
+  description: Django startproject template with some poetry.
+  id: 16
+  license: mit
+  og_image: https://opengraph.githubassets.com/001edf020f5032829473f389ed6ac5d54b982f257838030097fac13f28bc701c/oliverandrich/django-poetry-startproject
+  owner_name: oliverandrich
+  repo_name: django-poetry-startproject
+  timestamp: '2023-05-14T00:31:39.663358'
+  topics_list: '["django","python","template","alpinejs","htmx","starter-kit","starter-project","template-project"]'
+  updated_at: '2023-04-11T12:38:55Z'
+- created_at: '2022-07-26T12:22:50Z'
+  description: Django Starter Project, including TailWindCSS and all other useful
+    modules
+  id: 17
+  license: mit
+  og_image: https://repository-images.githubusercontent.com/518050347/00ed01c0-a300-4b3f-afb3-b7a996d3953e
+  owner_name: collove
+  repo_name: DjangoTailwindTemplate
+  timestamp: '2023-05-14T00:31:41.183872'
+  topics_list: '["django","python","starter-template","django-starter","django-tailwind"]'
+  updated_at: '2023-04-20T05:19:23Z'
+- created_at: '2023-05-10T07:00:30Z'
+  description: Your all-in-one Django-Docker starter kit. Pre-configured services
+    including PostgreSQL, Redis, Celery, with Nginx and Traefik for production. Streamlined
+    development with included tools for testing and formatting.
+  id: 18
+  license: mit
+  og_image: https://opengraph.githubassets.com/0c66317177ee0a6ea5e71c624056bfd247ad2b72f944c2268e0ca47a6fdc8d19/godd0t/django-docker-quickstart
+  owner_name: godd0t
+  repo_name: django-docker-quickstart
+  timestamp: '2023-05-14T00:31:42.761896'
+  topics_list: '["django","docker","pytest","docker-compose","coverage","django-docker","nginx","traefik"]'
+  updated_at: '2023-05-13T16:23:46Z'
+- created_at: '2023-01-28T21:05:44Z'
+  description: null
+  id: 19
+  license: mit
+  og_image: https://opengraph.githubassets.com/432d39916b1a49254a76be33c42c0f2ed75b1d5c0395f48cf5d7cf85a9e96276/tomwojcik/django-fly-sqlite-template
+  owner_name: tomwojcik
+  repo_name: django-fly-sqlite-template
+  timestamp: '2023-05-14T00:31:44.158595'
+  topics_list: '[]'
+  updated_at: '2023-02-21T19:41:44Z'

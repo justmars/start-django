@@ -1,0 +1,5 @@
+{% load i18n account fragments %}
+<form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+  {% csrf_token %}
+  <button class="w-full btn" data-btn="primary" >Confirm</button>
+</form>

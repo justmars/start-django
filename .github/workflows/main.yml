@@ -1,0 +1,77 @@
+name: Build
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install Dependencies
+        run: |
+          pip install pre-commit
+          pre-commit install-hooks
+      - name: Lint with pre-commit
+        run: pre-commit run --all-files
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    strategy:
+      matrix:
+        python-version: ['3.11']
+    name: Testing Python ${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install TailwindCSS
+        run: npm init -y && npm i && npm install -D tailwindcss @tailwindcss/typography @tailwindcss/forms @tailwindcss/aspect-ratio @tailwindcss/container-queries
+      - name: Generate Django output.css
+        run: npx tailwindcss -i ./src/static/css/input.css -o ./src/static/css/output.css
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Setup Poetry
+        uses: Gr1N/setup-poetry@v8
+        with:
+          poetry-version: 1.4.2
+      - name: Cache Poetry
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pypoetry/virtualenvs
+          key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
+      - name: Install Python Dependencies
+        run: poetry install
+      - name: Add Staticfiles
+        run: poetry run python src/manage.py collectstatic --noinput
+      - name: Compress files
+        run: poetry run python src/manage.py compress --force
+      - name: Pytest via Sqlite Database Engine
+        env:
+          DATABASE_URL: 'sqlite:///testdb.sqlite'
+        run: poetry run pytest --ds=config.settings
+        working-directory: ./src
+      - name: Pytest via Postgres Database Engine
+        env:
+          DATABASE_URL: 'postgres://postgres:postgres@localhost:${{ job.services.postgres.ports[5432] }}/postgres'
+        run: poetry run pytest
+        working-directory: ./src

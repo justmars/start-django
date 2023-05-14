@@ -1,0 +1,8 @@
+<form id="img-form" action="{% url 'profiles:hx_img_post' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label class="relative py-2 px-3.5 text-sm font-semibold text-white rounded-md shadow-sm cursor-pointer bg-grayed hover:bg-grayed-muted focus-visible:outline-grayed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+    <span>Change</span>
+    <input _="on change submit() with closest <form/> end" id="id_image" name="id_image" type="file" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" />
+  </label>
+  <button hidden></button>
+</form>

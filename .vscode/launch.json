@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Django Local",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/manage.py",
+      "args": [
+        "runserver",
+        "--noreload",
+        "--nothreading",
+      ],
+      "django": true,
+      "cwd": "${workspaceFolder}/src",
+    },
+    {
+        "name": "Python: Remote Attach",
+        "type": "python",
+        "request": "attach",
+        "port": 5678,
+        "host": "localhost",
+        "pathMappings": [
+            {
+                "localRoot": "${workspaceFolder}/src",
+                "remoteRoot": "."
+            }
+        ]
+    },
+    {
+      "name": "Python: Attach using Process Id",
+      "type": "python",
+      "request": "attach",
+      "processId": "${command:pickProcess}"
+    }
+  ]
+}

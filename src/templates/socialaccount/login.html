@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n start %}
+{% block title %}{% trans "Sign In" %}{% endblock title %}
+{% block content %}
+  {% if process == "connect" %}
+    {# Used in ConnectionView when adding a new social provider #}
+    {% blocktrans asvar heading with provider.name as soc %}Connect {{ soc }}{% endblocktrans %}
+    {% blocktrans asvar caption with provider.name as soc %}Add your {{ soc }} account to social login?{% endblocktrans %}
+  {% else %}
+    {# process is None / 'login' will sign up using social account provider #}
+    {% blocktrans asvar heading with provider.name as soc %}Sign in with {{ soc }}{% endblocktrans %}
+    {% blocktrans asvar caption with provider.name as soc %}Use your {{ soc }} account to login?{% endblocktrans %}
+  {% endif %}
+  {% include 'text/header_fragment.html' with heading=heading caption=caption cta="socialaccount/_custom/_login_cta.html" %}
+{% endblock content %}

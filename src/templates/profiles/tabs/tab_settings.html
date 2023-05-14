@@ -1,0 +1,53 @@
+{% load static account start fragments %}
+{% if request.user.is_active %}{# this layout is for tabbed user settings #}
+  <div class="px-4 pb-6 mx-auto max-w-screen-xl sm:px-6 lg:px-8 lg:pb-16">
+    <div class="overflow-hidden rounded-lg shadow dark:shadow-sm dark:shadow-slate-700">
+      <div class="lg:grid lg:grid-cols-12">
+        <aside class="py-6 lg:col-span-3">
+          <div class="hidden overflow-hidden relative mx-6 lg:block">
+            <div class="mb-2 sm:mb-4">
+              <img class="relative rounded-md object-fit aspect-square w-100" src="{{request.user.profile.image_url}}" alt="{{request.user.profile|default:'Default image.'}}">
+            </div>
+          </div>
+          <nav class="flex flex-col mx-6 space-y-1 sm:mt-6 m:mx-8" aria-label="user-setting-tabs">
+            <a {% curr request.path 'profiles:settings' %} href="{% url 'profiles:settings' %}" class="flex items-center py-2 px-3 text-sm font-medium rounded-md focus:ring-1 focus:outline-none text-grayed-muted aria-current:text-dawn-darkerdark:text-grayed-muted dark:hover:text-fuchsia-200 dark:focus:ring-grayed-darker dark:aria-current:text-fuchsia-400 hover:text-dawn-muted focus:ring-grayed-lighter" tabindex="0">
+              {% icon name='user_circle' css="-ml-1 mr-3 h-6 w-6 flex-shrink-0 text-dawn-darker dark:text-dusk-lighter" post_text="Personal Data" post_class="truncate" %}
+            </a>
+
+            <a {% curr request.path 'account_email' %} href="{% url 'account_email' %}" class="flex items-center py-2 px-3 text-sm font-medium rounded-md focus:ring-1 focus:outline-none text-grayed-muted aria-current:text-dawn-darkerdark:text-grayed-muted dark:hover:text-fuchsia-200 dark:focus:ring-grayed-darker dark:aria-current:text-fuchsia-400 hover:text-dawn-muted focus:ring-grayed-lighter" tabindex="0">
+              {% icon name='at_symbol' css="-ml-1 mr-3 h-6 w-6 flex-shrink-0 text-dawn-darker dark:text-dusk-lighter" post_text="Email" post_class="truncate" %}
+            </a>
+
+            {% if password_set_form %}{# form in context in a password_change_url = django-allauth switch for password management #}
+              <a {% curr request.path 'account_set_password' %} href="{% url 'account_change_password' %}" class="flex items-center py-2 px-3 text-sm font-medium rounded-md focus:ring-1 focus:outline-none text-grayed-muted aria-current:text-dawn-darkerdark:text-grayed-muted dark:hover:text-fuchsia-200 dark:focus:ring-grayed-darker dark:aria-current:text-fuchsia-400 hover:text-dawn-muted focus:ring-grayed-lighter" tabindex="0">
+                {% icon name='key' css="-ml-1 mr-3 h-6 w-6 flex-shrink-0 text-dawn-darker dark:text-dusk-lighter" post_text="Password" post_class="truncate" %}
+              </a>
+            {% else %}
+              <a {% curr request.path 'account_change_password' %} href="{% url 'account_change_password' %}" class="flex items-center py-2 px-3 text-sm font-medium rounded-md focus:ring-1 focus:outline-none text-grayed-muted aria-current:text-dawn-darkerdark:text-grayed-muted dark:hover:text-fuchsia-200 dark:focus:ring-grayed-darker dark:aria-current:text-fuchsia-400 hover:text-dawn-muted focus:ring-grayed-lighter" tabindex="0">
+                {% icon name='key' css="-ml-1 mr-3 h-6 w-6 flex-shrink-0 text-dawn-darker dark:text-dusk-lighter" post_text="Password" post_class="truncate" %}
+              </a>
+            {% endif %}
+
+            <a {% curr request.path 'socialaccount_connections' %} href="{% url 'socialaccount_connections' %}" class="flex items-center py-2 px-3 text-sm font-medium rounded-md focus:ring-1 focus:outline-none text-grayed-muted aria-current:text-dawn-darkerdark:text-grayed-muted dark:hover:text-fuchsia-200 dark:focus:ring-grayed-darker dark:aria-current:text-fuchsia-400 hover:text-dawn-muted focus:ring-grayed-lighter" tabindex="0">
+              {% icon name='user_plus' css="-ml-1 mr-3 h-6 w-6 flex-shrink-0 text-dawn-darker dark:text-dusk-lighter" post_text="Social Login" post_class="truncate" %}
+            </a>
+
+            <a {% curr request.path 'profiles:settings_account_data' %}  href="{% url 'profiles:settings_account_data' %}" class="flex items-center py-2 px-3 text-sm font-medium rounded-md focus:ring-1 focus:outline-none text-grayed-muted aria-current:text-dawn-darkerdark:text-grayed-muted dark:hover:text-fuchsia-200 dark:focus:ring-grayed-darker dark:aria-current:text-fuchsia-400 hover:text-dawn-muted focus:ring-grayed-lighter" tabindex="0">
+              {% icon name='adjustments_horizontal' css="-ml-1 mr-3 h-6 w-6 flex-shrink-0 text-dawn-darker dark:text-dusk-lighter" post_text="Account Settings" post_class="truncate" %}
+            </a>
+          </nav>
+        </aside>
+        <div class="px-4 sm:px-6 lg:col-span-9">
+          <div class="py-6 px-4 sm:p-6 lg:pb-8">
+            {% include 'text/header.html' with heading=heading caption=caption heading_css="text-3xl text-dawn-darker/90 dark:text-fuchsia-400/90" %}
+            {% if tab_panel_template %}
+              <div class="mt-6">
+                {% include tab_panel_template %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

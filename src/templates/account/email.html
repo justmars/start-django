@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n start %}
+{% block content %}
+  {% trans "E-mail Addresses" as heading %}
+  {% if user.emailaddress_set.all %}
+    {% include 'profiles/tabs/tab_settings.html' with tab_panel_template="account/_custom/_email_cta.html" %}
+  {% else %}
+    {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." as caption %}</p>
+    {% include 'profiles/tabs/tab_settings.html' with tab_panel_template="account/_custom/_email_cta_add_email_form.html" %}
+  {% endif %}
+{% endblock content %}

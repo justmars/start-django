@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load start fragments %}
+{% block content %}
+  <div class="py-24 px-6 mx-auto max-w-2xl sm:py-6 lg:px-8">
+    <div class="hidden sm:flex sm:justify-center sm:mb-8">
+      <div class="relative py-1 px-3 rounded-full ring-1 text-sm/6 ring-gray-900/10 dark:ring-gray-300/10 dark:hover:ring-gray-300/20 hover:ring-gray-900/20">
+        Choose this... or one of many popular boilerplates <a href="{% url 'pages:popular' %}" class="italic dark:text-purple-300 hover:font-bold focus:font-bold focus:outline-none text-dawn"><span class="absolute inset-0" aria-hidden="true"></span><span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="text-center">
+      <h1 class="text-5xl font-bold tracking-tight sm:text-6xl"><span class="text-grayed dark:text-grayed-lighter">start</span><span class="text-grayed-muted dark:text-grayed">-</span><span class="text-dawn dark:text-dusk">django</span></h1>
+      <p class="mx-auto mt-6 max-w-xl font-thin text-lg/8 text-grayed dark:text-grayed-lighter">
+        css: <a target="_blank" href="https://tailwindcss.com" class="font-semibold underline focus:outline-none underline-offset-4 decoration-dusk hover:decoration-4 focus:decoration-4">TailwindCSS</a>
+        <br>reactive: <a target="_blank" href="https://htmx.org" class="font-semibold underline focus:outline-none underline-offset-4 decoration-pink-600 hover:decoration-4 focus:decoration-4">htmx</a>
+        <br>scripted: <a target="_blank" href="https://hyperscript.org" class="font-semibold underline focus:outline-none underline-offset-4 decoration-cyan-600 hover:decoration-4 focus:decoration-4">hyperscript</a>
+        <br>deployable: <a target="_blank" href="https://fly.io" class="font-semibold underline focus:outline-none underline-offset-4 decoration-sky-600 hover:decoration-4 focus:decoration-4">fly.io</a>
+      </p>
+      <div class="flex gap-x-4 justify-center items-center mt-10">
+        {% icon name="github" prefix="bootstrap" css="h-6 w-6" aria_hidden="true" post_text="Code" parent_tag="a" parent_type="button" parent_href="https://github.com/justmars/start-django" parent_class="inline-flex gap-x-2 items-center py-2.5 px-3.5 text-sm font-semibold text-white rounded-md shadow-sm focus:rounded-md focus:ring-2 focus:ring-offset-4 focus:ring-offset-green-300 focus:outline-none bg-zinc-900 dark:bg-grayed-darker dark:hover:bg-purple-600 dark:focus:ring-dusk dark:focus:ring-offset-purple-300 hover:bg-dawn focus:ring-dawn" %}
+        {% icon name="markdown" prefix="bootstrap" css="h-6 w-6" aria_hidden="true" post_text="Docs" parent_tag="a" parent_type="button" parent_href="https://mv3.dev/start-django" parent_class="inline-flex gap-x-2 items-center py-2.5 px-3.5 text-sm font-semibold text-white rounded-md shadow-sm focus:rounded-md focus:ring-2 focus:ring-offset-4 focus:ring-offset-green-300 focus:outline-none bg-zinc-900 dark:bg-grayed-darker dark:hover:bg-purple-600 dark:focus:ring-dusk dark:focus:ring-offset-purple-300 hover:bg-dawn focus:ring-dawn" %}
+      </div>
+    </div>
+  </div>
+  <ul role="list" class="px-6 mx-auto max-w-7xl lg:px-8">
+    {% for feature in features %}
+      <li class="py-2 sm:py-12 sm:px-6 lg:px-8">
+        {% include './_feature.html' %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

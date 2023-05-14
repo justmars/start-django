@@ -1,0 +1,90 @@
+version: '3.9'
+services:
+  redis_db:
+    profiles: ["pg", "sq"]
+    image: redis:7
+    command: redis-server
+    ports:
+    - "6379:6379"
+
+  sq_web:
+    profiles: ["sq"]
+    environment:
+    - REDIS_URL=redis://redis_db:6379/0
+    - DATABASE_URL=sqlite:///data/test.sqlite
+    env_file: ./deploy/.env.debug
+    build:
+      context: .
+      dockerfile: ./deploy/sq/Dockerfile
+      args:
+        run_cmd: debug.sh
+    ports:
+    - 8080:8080
+    - 5678:5678
+    command: /opt/src/scripts/debug.sh
+    volumes:
+    - sq_data:/opt/src/data
+    depends_on:
+    - redis_db
+
+  sq_worker:
+    profiles: ["sq"]
+    environment:
+    - REDIS_URL=redis://redis_db:6379/0
+    - DATABASE_URL=sqlite:///data/test.sqlite
+    env_file: ./deploy/.env.debug
+    build:
+      context: .
+      dockerfile: ./deploy/sq/Dockerfile
+    command: /opt/src/scripts/worker.sh
+    volumes:
+      - sq_data:/opt/src/data
+    depends_on:
+    - sq_web
+    - redis_db
+
+  pg_db:
+    profiles: ["pg"]
+    image: postgres:15
+    volumes:
+    - pg_data:/var/lib/postgresql/data/
+    environment:
+    - POSTGRES_HOST_AUTH_METHOD=trust
+
+  pg_web:
+    profiles: ["pg"]
+    environment:
+    - REDIS_URL=redis://redis_db:6379/0
+    - DATABASE_URL=postgres://postgres:postgres@pg_db:5432/postgres
+    env_file: ./deploy/.env.debug
+    build:
+      context: .
+      dockerfile: ./deploy/pg/Dockerfile
+      args:
+        run_cmd: debug.sh
+    ports:
+    - 8080:8080
+    - 5678:5678
+    command: /opt/src/scripts/debug.sh
+    depends_on:
+    - redis_db
+    - pg_db
+
+  pg_worker:
+    profiles: ["pg"]
+    environment:
+    - REDIS_URL=redis://redis_db:6379/0
+    - DATABASE_URL=postgres://postgres:postgres@pg_db:5432/postgres
+    env_file: ./deploy/.env.debug
+    build:
+      context: .
+      dockerfile: ./deploy/pg/Dockerfile
+    command: /opt/src/scripts/worker.sh
+    depends_on:
+    - pg_web
+    - redis_db
+    - pg_db
+
+volumes:
+  pg_data:
+  sq_data:

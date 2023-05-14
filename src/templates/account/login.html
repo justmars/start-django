@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n socialaccount widget_tweaks start %}
+{% block title %}{% trans "Sign In" %}{% endblock title %}
+{% block content %}
+  {% include '_msg.html' with messages=form.non_field_errors %}
+  {% trans "Sign In" as heading %}
+  {% blocktrans asvar caption %}No account yet? Please <a class="underline underline-offset-4 decoration-sky-500" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+  {% include 'text/header_fragment.html' with heading=heading caption=caption cta='account/_custom/_login_cta.html' %}
+{% endblock content %}

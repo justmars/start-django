@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Verify Your E-mail Address" %}{% endblock title %}
+
+{% block content %}
+  {% url 'pages:contact' as contact_form_url %}
+  {% trans "Verify Your E-mail Address" as heading %}
+  {% blocktrans asvar caption %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please <a href="{{contact_form_url}}" class="underline decoration-dawn">contact us</a> if you do not receive it within a few minutes.{% endblocktrans %}
+  {% include 'text/header_fragment.html' with heading=heading caption=caption %}
+{% endblock content %}

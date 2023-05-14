@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load i18n start %}
+{% block content %}
+  {% include '_msg.html' with messages=messages %}
+  {% trans "Account Settings" as heading %}
+  {% trans "Hello app-based settings!" as caption %}
+  {% include './tabs/tab_settings.html' with tab_panel_template="profiles/tabs/_tab_account_proper.html" %}
+{% endblock content %}

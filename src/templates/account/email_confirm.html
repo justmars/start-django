@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n account start %}
+{% block title %}{% trans "Confirm E-mail Address" %}{% endblock title %}
+
+{% block content %}
+  {% trans "Confirm E-mail Address" as heading %}
+  {% if confirmation %}
+    {% blocktrans asvar caption with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}" class="underline decoration-sky-500">{{ email }}</a> is your e-mail address.{% endblocktrans %}
+    {% include 'text/header_fragment.html' with heading=heading caption=caption cta="account/_custom/_email_confirm_cta.html" %}
+  {% else %}
+    {% url 'account_email' as email_url %}
+    {% blocktrans asvar caption %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}
+  {% endif %}
+{% endblock content %}

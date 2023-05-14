@@ -1,0 +1,19 @@
+{% load static widget_tweaks fragments %}
+{% spaceless %}{# see django-fragments' down-list.html #}
+  <div id="{{idx}}" _="on load js doSelect('{{idx}}') end end" class="{{kls}} relative">
+    {{ field|append_attr:"hidden" }}
+    {{ field.label_tag }}
+    <button class="relative fragment">{# see tailwind forms override in input.css #}
+      <span class="block truncate">{{field.value|default:'None'}}</span>
+      {% icon name='chevron_up_down' css='h-5 w-5 text-grayed-muted' parent_class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2" %}
+    </button>
+    <ul hidden role="listbox" class="overflow-y-auto absolute z-10 py-1 mt-2 w-full max-h-40 text-base bg-gray-200 rounded-md ring-1 ring-black ring-opacity-5 shadow-lg sm:text-sm dark:bg-gray-800 focus:outline-none">
+      {% for choice in field.field.choices %}
+        <li data-key="{{choice.0|default:'None'}}" data-value="{{choice.1}}" class="relative py-2 pr-9 pl-3 cursor-default select-none group aria-selected:text-dawn text-grayed dark:aria-selected:text-white dark:aria-selected:bg-dusk dark:text-grayed-muted">
+          <span class="block font-normal truncate">{{choice.1}}</span>
+          {% icon name='check' css='h-5 w-5' parent_class="group-aria-selected:text-dawn dark:group-aria-selected:text-dusk-lighter text-gray-200 dark:text-gray-800 absolute inset-y-0 right-0 flex items-center pr-4" %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endspaceless %}

@@ -1,0 +1,20 @@
+{% load static start fragments %}
+<div class="px-4">
+  <form>
+    <div class="flex-grow space-y-6">
+      <div class="grid grid-cols-12 gap-6 mt-6">
+        {% hput form.first_name kls="fx col-span-12 sm:col-span-3" %}
+        {% hput form.middle_name kls="fx col-span-12 sm:col-span-3" %}
+        {% hput form.last_name kls="fx col-span-12 sm:col-span-3" %}
+        {% sel form.suffix idx="sfx-id" kls="col-span-12 sm:col-span-3" %}
+        {% sel form.gender idx="gender-id" kls="col-span-12 sm:col-span-6" %}
+        {% hput form.date_of_birth kls="fx col-span-12 sm:col-span-6" %}
+      </div>
+      {% hput form.bio kls='fx' %}
+    </div>
+    {% url 'profiles:hx_personal_data_post' as target_hx_url %}
+    <div class="flex gap-x-3 justify-start py-4 mt-4">
+      <button data-btn="primary" class="w-full btn" hx-post="{{target_hx_url}}" hx-swap="none">Updated</button>
+    </div>{# although hx-swap is operative, hx-oob will still be respected; relate to alert in parent template #}
+  </form>
+</div>

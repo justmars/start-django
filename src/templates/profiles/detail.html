@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static start fragments %}
+{% block title %}{% if profile.user.is_active %} {{profile.full_name}} Profile | {% endif %} Brand X{% endblock title %}
+{% block content %}
+  {% if profile.user.is_active %}
+    <div class="py-8 px-4 mx-auto max-w-7xl text-center sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-md">
+        <section class="flex justify-center">
+          <img class="object-contain rounded-3xl" src="{{profile.image_url|variant:'w=600'}}" alt="{{profile|default:'Default image.'}}">
+        </section>
+        <section id="name">
+          <h3 class="mt-6 text-lg font-semibold tracking-tight leading-8 text-grayed-darker dark:text-grayed-lighter">{{profile.full_name}}</h3>
+        </section>
+        <p class="text-base leading-7 text-grayed">Developer</p>
+        <div class="flex gap-4 justify-center mt-2">
+          <a href="#" class="text-gray-400 hover:text-gray-500">
+            {% icon name="twitter" prefix="bootstrap" css="h-5 w-5" aria_hidden="true" pre_text="Twitter" pre_class="sr-only" %}
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500">
+            {% icon name="linkedin" prefix="bootstrap" css="h-5 w-5" aria_hidden="true" pre_text="LinkedIn" pre_class="sr-only" %}
+          </a>
+        </div>
+      </section>
+    </div>
+  {% else %}
+    <h1>Profile deactivated.</h1>
+  {% endif %}
+{% endblock content %}

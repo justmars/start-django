@@ -1,0 +1,17 @@
+{% load i18n start fragments %}
+{% if can_add_email %}
+  <div class="mt-10 rounded-lg shadow-sm dark:shadow-sm dark:shadow-slate-600">
+    <div class="py-6 px-4">
+      {% include 'text/header.html' with heading="Add" caption="Add other e-mail addresses to this account." %}
+      <form method="post" action="{% url 'account_email' %}" class="mt-5">
+        {% csrf_token %}
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {% hput form.email kls="fx" %}
+          <div class="self-end pb-2">
+            <button name="action_add" class="w-full btn" data-btn="primary">Add E-mail</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endif %}

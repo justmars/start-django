@@ -1,0 +1,26 @@
+{% load fragments %}
+<div id="alerts-hq" {% if messages %}hx-swap-oob="true"{% endif %} role="alert" class="flex fixed inset-0 z-10 items-end py-6 px-4 pointer-events-none sm:items-start sm:p-6">
+  <div class="flex flex-col items-center space-y-4 w-full sm:items-end">
+    {% for message in messages %}
+      <div id="msg-{{forloop.counter}}" _="on load show me"
+        data-level="{{message.level_tag|lower}}"
+        class="{{message.tags}} overflow-hidden z-20 w-full max-w-sm rounded-lg shadow-lg pointer-events-auto
+          data-[level=success]:bg-green-300 dark:data-[level=success]:bg-fuchsia-600
+          data-[level=info]:bg-sky-300 dark:data-[level=info]:bg-blue-800
+          data-[level=warning]:bg-yellow-500-300 dark:data-[level=warning]:bg-orange-400 dark:data-[level=warning]:text-gray-700
+          data-[level=error]:bg-red-300 dark:data-[level=error]:bg-rose-500"
+        >
+        <div class="flex items-center p-4">
+          <div class="flex flex-1 justify-between w-0">
+            <p class="flex-1 w-0 text-sm font-medium text-grayed dark:text-grayed-lighter">{{message}}</p>
+          </div>
+          <div class="flex flex-shrink-0 ml-4">
+            <button _="on click remove #msg-{{forloop.counter}} end" id="msg-close-{{forloop.counter}}" type="button" class="inline-flex rounded-md">
+              {% icon name='x_mark_mini' css="h-5 w-5 " pre_text="Close" pre_class="sr-only" aria_hidden="true" %}
+            </button>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

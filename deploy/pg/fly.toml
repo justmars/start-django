@@ -1,0 +1,25 @@
+app = "start-django"
+primary_region = "sin"
+
+[env]
+  ENV_NAME = "test" # determines Django env vars
+  DJANGO_DEBUG = "True" #  display debug-toolbar
+  PORT = "8080" # used in web.sh
+
+[build.args]
+  run_cmd = "web.sh"
+
+[processes]
+  web = "sh /opt/src/scripts/web.sh"
+  worker = "sh /opt/src/scripts/worker.sh"
+
+[http_service]
+  processes = ["web"]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+
+[[statics]]
+  guest_path = "/opt/src/static"
+  url_prefix = "/static"

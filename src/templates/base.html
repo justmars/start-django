@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static compress start fragments %}
+{% spaceless %}
+  {% compress js %}{# utils via django-fragments #}
+    <script src="{% static 'doTheme.js' %}"></script>
+    <script src="{% static 'doDropCommon.js' %}"></script>
+    <script src="{% static 'doDropSelect.js' %}"></script>
+    <script src="{% static 'doDropMenu.js' %}"></script>
+  {% endcompress js %}
+  <script>themeHTML()</script>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="noindex">{# SEO: Remove <meta robots noindex> when ready for public indexing in search engines  #}
+      <link rel="shortcut icon" type="image/png" href="{% static 'img/favicons/favicon.ico' %}"/>
+      <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicons/apple-touch-icon.png' %}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicons/favicon-32x32.png' %}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicons/favicon-16x16.png' %}">
+      <link rel="manifest" href="{% static 'img/favicons/site.webmanifest' %}">{# List of icons #}
+      {% block extra_meta %}{# seo #}
+        {% og_desc "site simple grug boring: tailwind django htmx, start change here" %}
+        <meta name="author" content="https://mv3.dev" />
+      {% endblock extra_meta %}
+      {% compress css %}
+        <link rel="stylesheet" href="{% static 'css/output.css' %}">
+      {% endcompress %}
+    </head>
+    <body {% htmx_csrf %} class="flex flex-col min-h-screen bg-stone-200 text-grayed selection:text-white selection:bg-dawn dark:bg-slate-900 dark:text-grayed-lighter dark:selection:text-dusk-darker dark:selection:bg-fuchsia-300">
+      <header class="container py-4 mx-auto sm:py-8">
+        {% include './_nav.html' %}
+        {% include './_msg.html' %}
+      </header>
+      <main class="container flex-1 mx-auto">
+        {% block content %}
+        {% endblock content %}
+      </main>
+      <footer class="container my-4 mx-auto sm:py-4 bg-stone-200 dark:bg-slate-900">
+        <div class="px-10">
+          <ul role="list" class="flex justify-between space-x-10 sm:justify-end">
+            <li><a href="{% url 'pages:legal' 'terms' %}" class="hover:underline focus:underline focus:outline-none text-xs/6 text-grayed-muted dark:text-grayed dark:focus:decoration-dusk dark:hover:decoration-dusk dark:hover:focus:decoration-dusk hover:underline-offset-4 hover:decoration-dawn focus:underline-offset-4 focus:decoration-dawn">Terms</a></li>
+            <li><a href="{% url 'pages:legal' 'privacy' %}" class="hover:underline focus:underline focus:outline-none text-xs/6 text-grayed-muted dark:text-grayed dark:focus:decoration-dusk dark:hover:decoration-dusk dark:hover:focus:decoration-dusk hover:underline-offset-4 hover:decoration-dawn focus:underline-offset-4 focus:decoration-dawn">Privacy</a></li>
+          </ul>
+        </div>
+      </footer>
+      {% compress js %}
+        <script src="{% static 'js/htmx.min.js' %}"></script> {# 1.9.2 #}
+        <script src="{% static 'js/hyperscript.min.js' %}"></script> {# 0.9.8 #}
+      {% endcompress js %}{% block extra_js %}{% endblock extra_js %}
+    </body>
+  </html>
+{% endspaceless %}

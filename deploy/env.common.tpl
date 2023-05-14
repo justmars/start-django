@@ -1,0 +1,14 @@
+ENV_NAME=test
+DJANGO_SECRET_KEY='testing-key-needed'
+DJANGO_DEBUG=True
+POSTMARK_API_KEY=op://dev/postmark/credential
+DEFAULT_FROM_EMAIL="start-django <donotreply@mv3.dev>"
+EMAIL_RECIPIENT=op://dev/start-django/email/recipient
+EMAIL_SENDER=op://dev/start-django/email/sender
+GOOGLE_ID=op://dev/auth-local/google/id
+GOOGLE_KEY=op://dev/auth-local/google/secret
+GITHUB_ID=op://dev/auth-container/github/id
+GITHUB_KEY=op://dev/auth-container/github/secret
+CF_ACCT_ID=op://dev/cloudflare/acct_id
+CF_IMG_TOKEN=op://dev/cloudflare/images/token
+CF_IMG_HASH=op://dev/cloudflare/images/hash

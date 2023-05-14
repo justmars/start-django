@@ -1,0 +1,39 @@
+default_language_version:
+  python: python3.11
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: name-tests-test
+        args: ["--django"]
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.267
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        language_version: python3
+        args: [--preview]
+  - repo: https://github.com/asottile/blacken-docs
+    rev: 1.13.0
+    hooks:
+      - id: blacken-docs
+        additional_dependencies:
+          - black==23.3.0
+  - repo: local
+    hooks:
+    - id: rustywind
+      name: rustywind Tailwind CSS class linter
+      language: node
+      additional_dependencies:
+      - rustywind@0.15.3
+      entry: rustywind
+      args: [--write, templates]
+      types_or: [html]

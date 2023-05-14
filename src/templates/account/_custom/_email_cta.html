@@ -1,0 +1,48 @@
+{% load i18n start fragments %}
+<div class="py-4 px-4 rounded-lg shadow-sm dark:shadow-sm dark:shadow-slate-600">
+  {% include 'text/header.html' with heading="Associated" caption="Email addresses that have been associated with your account." %}
+  <form method="post" action="{% url 'account_email' %}">
+    {% csrf_token %}
+    <fieldset class="mt-4">
+      <legend class="sr-only">Associated Email Addresses</legend>
+      <div class="-space-y-px rounded-md">
+        {% with num=user.emailaddress_set.count emails=user.emailaddress_set.all %}
+          {% for e in emails %}
+            {% with value=e.email is_chk=e.primary r_label="{{email_radio-{{forloop.counter}}-label" r_caption="{{email_radio-{{forloop.counter}}-description" %}
+              <label class="flex relative items-center p-4 rounded-tl-md rounded-tr-md cursor-pointer focus:outline-none">
+                <input {% if is_chk or num is 1 %}checked="checked"{% endif %} type="radio" name="email" value="{{value}}" class="mt-0.5 rounded-full peer" aria-labelledby="{{r_label}}" aria-describedby="{{r_desc}}">
+                <span class="flex flex-col p-2 ml-3 rounded-md peer-checked:bg-gray-200 dark:peer-checked:bg-gray-800">
+                  <span id="{{r_label}}" class="block text-sm font-medium dark:text-gray-200 text-dawn-darker">{{value}}</span>
+                  <div id="{{r_desc}}" class="block text-sm font-light text-gray-500 dark:text-gray-400">
+                    {% if e.verified %}<span class="ml-2 italic">{% trans "Verified" %}</span>{% else %}<span class="ml-2 italic">{% trans "Unverified" %}</span>{% endif %}
+                    {% if e.primary %}<span class="ml-2 font-bold">{% trans "Primary" %}</span>{% endif %}
+                  </div>
+                </span>
+              </label>
+            {% endwith %}
+          {% endfor %}
+        {% endwith %}
+      </div>
+    </fieldset>
+    <div class="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-3">
+      <button name="action_primary" class="w-full h-full btn" data-btn="primary">Make Primary</button>
+      <button name="action_send" class="w-full h-full btn">Re-send Verification</button>
+      <a type="button" class="flex justify-center w-full h-full btn" href="#remove-email">Remove</a>
+      <section id="remove-email" class="relative invisible z-10 opacity-0 transition-all duration-300 group target:visible target:opacity-100" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="overflow-y-auto fixed inset-0 z-10">
+          <div class="flex justify-center items-end p-4 min-h-full text-center sm:items-center sm:p-0">
+            <a href="#" class="block fixed inset-0 bg-opacity-75 transition-opacity cursor-default bg-black/50"><span class="sr-only">Close Modal</span></a>
+            <div class="overflow-hidden relative text-left bg-white rounded-lg shadow-xl opacity-0 transition-all duration-300 transform scale-90 sm:my-8 sm:w-full sm:max-w-lg group-target:scale-100 group-target:opacity-100 dark:bg-grayed">
+              {% include 'text/header_modal.html' with heading='Remove Email' caption='Do you really want to remove the selected e-mail address?' icon_name='exclamation_triangle' icon_css="h-6 w-6 text-red-600 dark:text-red-100" background_icon_css="bg-red-100 dark:bg-red-600" %}
+              <div class="gap-2 py-3 px-4 bg-gray-50 sm:flex sm:flex-row-reverse sm:px-6 dark:bg-gray-600">
+                <button name="action_remove" class="btn">Remove</button>
+                <a type="button" class="btn" href="#">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </form>
+</div>
+{% include 'account/_custom/_email_cta_add_email_form.html' %}

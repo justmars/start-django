@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n start %}
+{% block title %}{% trans "Contact mv3" %}{% endblock title %}
+
+{% block content %}
+  {% include '_msg.html' with messages=form.non_field_errors %}
+  {% trans "Contact Me" as heading %}
+  {% trans "Feel free to leave a note!" as caption %}
+  {% include 'text/header_fragment.html' with heading=heading caption=caption cta="pages/_contact_form_area.html"%}
+{% endblock content %}

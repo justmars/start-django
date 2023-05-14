@@ -1,0 +1,13 @@
+{% load socialaccount start fragments %}
+<form method="post" action="{% url 'socialaccount_signup' %}">
+  {% csrf_token %}
+  {% hput form.email kls="fx flex flex-col gap-4" %}
+  <div class="flex items-center mt-6 text-sm font-lighter dark:text-grayed-lighter">
+    {{ form.user_consent }}
+    <label for="{{form.user_consent.id_for_label}}" class="block ml-3">I agree to <a href="{% url 'pages:legal' category='terms' %}" class="underline underline-offset-4 decoration-dawn dark:decoration-dusk" >terms of service</a>.</label>
+  </div>
+  {% if redirect_field_value %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />{% endif %}
+  <div class="mt-12">
+    <button data-btn="primary" class="w-full btn">Sign Up</button>
+  </div>
+</form>

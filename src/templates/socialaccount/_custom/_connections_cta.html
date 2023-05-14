@@ -1,0 +1,29 @@
+{% load i18n start fragments %}
+{% if form.accounts %}
+  <div class="py-4 px-4 rounded-lg shadow-sm dark:shadow-sm dark:shadow-slate-600">
+    {% blocktrans asvar socials_description %}You can sign in to your account using any of the following third party accounts:{% endblocktrans %}
+    {% include 'text/header.html' with heading="Social Providers" caption=socials_description %}
+    <form method="post" action="{% url 'socialaccount_connections' %}">
+      {% csrf_token %}
+      <fieldset class="grid grid-cols-2 gap-2 items-center mt-4">
+        {% for base_account in form.accounts %}
+          {% with base_account.get_provider_account as account %}
+            <label for="id_account_{{ base_account.id }}" class="flex gap-3 items-center">
+              <input id="id_account_{{ base_account.id }}" type="radio" class="mt-0.5 rounded-full" name="account" value="{{ base_account.id }}"/>
+              <span class="{{ base_account.provider }} {{ account.get_brand.id }} peer-checked:bg-gray-200 dark:peer-checked:bg-gray-800">{{account.get_brand.name}}</span>
+            </label>
+            <span>
+              {{ account }}
+            </span>
+          {% endwith %}
+        {% endfor %}
+      </fieldset>
+      <div class="flex gap-x-3 justify-start py-4 mt-4">
+        <button data-btn="primary" class="w-full btn">Remove</button>
+      </div>
+    </form>
+  </div>
+{% else %}
+  <p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
+{% endif %}
+{% include 'socialaccount/_custom/_connections_cta_add_social_form.html' %}

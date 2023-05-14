@@ -1,0 +1,6 @@
+{% load start fragments %}
+<form method="post">
+  {% csrf_token %}
+  {% if redirect_field_value %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />{% endif %}
+  <button data-btn="primary" class="w-full btn">Continue</button>
+</form>

@@ -1,0 +1,21 @@
+{% load start fragments %}
+<section class="p-16 rounded-md shadow-lg dark:shadow-md hover:shadow-md dark:hover:shadow-lg dark:shadow-purple-800 hover:shadow-sky-200 hover:dark:shadow-purple-900">
+  <div class="mx-auto sm:max-w-2xl sm:text-center">
+    <p class="font-semibold dark:text-pink-400 text-base/7 text-sky-500">{{feature.caption}}</p>
+    <h2 class="pt-2 text-3xl font-bold tracking-tight sm:text-4xl text-dawn dark:text-dusk">{{feature.headline}}</h2>
+    <div class="mx-auto sm:max-w-md dark:text-grayed-muted">
+      <p class="mt-6 dark:text-gray-300 feature text-lg/8 text-grayed">{{feature.description|md}}</p>
+    </div>
+    {% if feature.links %}
+      <ul role="list" class="flex flex-col gap-2 pt-8">
+        {% for link in feature.links %}
+          <a href="{{link.url}}" target="_blank" class="focus:outline-none group">
+            <li class="inline-flex items-center py-2 px-4 text-xs font-light text-gray-600 bg-gray-300 rounded-full sm:text-base dark:text-pink-100 dark:bg-gray-800 hover:text-green-100 dark:hover:bg-pink-700 group-focus:dark:bg-pink-700/40 group-focus:bg-dawn/40 hover:bg-dawn">
+              {% icon name=link.icon_name css="h-4 w-4 sm:h-6 sm:w-6" post_text=link.label post_class="ml-3"  %}
+            </li>
+          </a>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,33 @@
+app = "start-django"
+primary_region = "sin"
+
+[env]
+  ENV_NAME = "test"
+  DJANGO_DEBUG = "True"
+  PORT = "8080"
+
+[build.args]
+  litestream_ver = "0.3.9"
+  sqlite_year = "2023"
+  sqlite_ver = "3410200"
+  run_cmd = "web.sh"
+
+[processes]
+  web = "sh /opt/src/scripts/web.sh"
+  # worker = "sh /opt/src/scripts/worker.sh"
+
+[mounts]
+  source = "start_django_sq"
+  destination = "/opt/src/data"
+  processes = ["web"] # , "worker"
+
+[http_service]
+  processes = ["web"]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+
+[[statics]]
+  guest_path = "/opt/src/static"
+  url_prefix = "/static"

@@ -1,0 +1,17 @@
+{% load i18n account widget_tweaks fragments %}
+<form method="post" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  <div class="flex flex-col gap-4">
+    {% hput form.login|attr:"required"|attr:"placeholder" kls="fx" %}
+    {% hput form.password|attr:"placeholder"  kls="fx" %}
+  </div>
+  {% if redirect_field_value %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />{% endif %}
+  <div class="mt-6">
+    <button data-btn="primary" class="w-full btn">Sign In</button>
+  </div>
+</form>
+<div class="flex justify-between items-center mt-6 text-sm font-lighter dark:text-grayed-lighter hover:text-grayed">
+  <a href="{% url 'account_reset_password' %}">Forgot your password?</a>
+  <a href="{{ signup_url }}">Create your account</a>
+</div>
+{% include './_social_auth_cta.html' %}

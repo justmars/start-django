@@ -1,0 +1,57 @@
+home:
+  features:
+  - order: 1
+    caption: gruggish html
+    headline: Native UI
+    description: |
+      [Template tags](https://docs.djangoproject.com/en/dev/howto/custom-template-tags/){: .underline .underline-offset-4 .decoration-dotted .decoration-sky-500 .dark:decoration-pink-300 .focus:outline-none .focus:decoration-4 .hover:decoration-4 }
+      for [localized behavior](https://htmx.org/essays/locality-of-behaviour/){: .underline .underline-offset-4 .decoration-dotted .decoration-sky-500 .dark:decoration-pink-300 .focus:outline-none .focus:decoration-4 .hover:decoration-4 }.
+    links:
+    - icon_name: plus_circle
+      label: Copy/paste svg icon flow
+      url: https://mv3.dev/django-fragments/fragments/icon
+    - icon_name: code_bracket
+      label: Styled input form field
+      url: https://mv3.dev/django-fragments/fragments/hput
+    - icon_name: chevron_up_down
+      label: Complexed select field
+      url: https://mv3.dev/start-django/components/start/select.md
+    - icon_name: bell
+      label: Messages + htmx
+      url: https://mv3.dev/start-django/components/start/msg.md
+  - order: 2
+    caption: cloudflare, postmark, social
+    headline: Auth User+
+    description: |
+      User settings page, handling avatars and email/social auth, over thin-wrapper of Custom User Model.
+    links:
+    - icon_name: user_circle
+      label: Pre-templated django-allauth logic
+      url: https://mv3.dev/start-django/setup/auth-social/
+    - icon_name: user_plus
+      label: Google + Github auth setup
+      url: https://mv3.dev/start-django/setup/auth-social/
+    - icon_name: photo
+      label: Avatars via Cloudflare Images
+      url: https://mv3.dev/start-django/setup/cloudflare-images/
+    - icon_name: at_symbol
+      label: Transactional emails c/o Postmark
+      url: https://mv3.dev/start-django/setup/email-postmark/
+    - icon_name: database
+      label: Profile connected to Consent
+      url: https://mv3.dev/start-django/setup/user-model/
+  - order: 3
+    caption: dev | test | prod
+    headline: Deploy fly.io
+    description: |
+      Wires up fly.toml + Dockerfile for a minimal Django setup with static files, postgres/sqlite as a database, and huey as background worker.
+    links:
+    - icon_name: list_bullet
+      label: Test locally with compose.yml
+      url: https://mv3.dev/start-django/contexts/container.md
+    - icon_name: paper_airplane
+      label: Deploy with either sqlite or postgres
+      url: https://mv3.dev/start-django/deploy/config
+    - icon_name: wrench_screwdriver
+      label: Manage with preset environments
+      url: https://mv3.dev/start-django/references/settings/#environment-switcher

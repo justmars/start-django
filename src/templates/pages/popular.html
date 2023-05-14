@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n fragments %}
+{% block extra_meta %}
+  {% og_title text="Community-Driven Starters " request=request %}
+  {% og_desc text="A list of starter projects" %}
+{% endblock extra_meta %}
+
+{% block content %}
+  {% trans "Popular Boilerplates" as heading %}
+  {% trans "If this boilerplate isn't your cup of tea, there are many other options available." as caption %}
+  {% include 'text/header_fragment.html' with heading=heading caption=caption %}
+  <div class="mx-auto max-w-2xl">
+    <ul role="list" class="space-y-3">
+      {% for starter in starters %}
+        <li class="overflow-hidden">
+          {% include './_repo.html' with repo=starter %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="flex flex-col">
+      <header class="flex gap-2">
+        {% include 'text/header_fragment.html' with heading=agreement.title caption=agreement.created|date %}
+      </header>
+      <div class="flex mx-auto">
+        <div class="p-8 max-w-2xl">
+          {% for clause in clauses %}
+            <section class="my-10">
+              <details class="p-6 rounded-lg open:bg-white open:ring-1 open:ring-black/5 open:shadow-lg dark:open:bg-slate-900 dark:open:ring-white/10" open>
+                <summary class="text-sm font-semibold leading-6 select-none dark:text-white text-slate-900">
+                  {% lorem 3 w %}
+                </summary>
+                <div class="mt-3 text-sm leading-6 prose text-slate-600 dark:text-slate-400">
+                  {% lorem 1 p %}
+                </div>
+              </details>
+            </section>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

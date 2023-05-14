@@ -1,0 +1,59 @@
+{
+  "editor.fontLigatures": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "python.testing.pytestArgs": [
+    "${workspaceFolder}/src", // without this, pytest discovery error
+    "--ds=config.settings", // see pytest django
+    "--doctest-modules",
+    "--exitfirst",
+    "--verbose"
+    ],
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports.ruff": true
+    },
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "yaml.schemas": {
+    "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+  },
+  "yaml.customTags": [
+    "!ENV scalar",
+    "!ENV sequence",
+    "tag:yaml.org,2002:python/name:materialx.emoji.to_svg",
+    "tag:yaml.org,2002:python/name:materialx.emoji.twemoji",
+    "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
+  ],
+  "markdownlint.config": {
+    "MD024": false,
+    "MD034": false,
+    "MD046": false,
+    "MD052": false,
+    "MD033": false,
+  },
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "**/env.example": "dotenv", // handles 1password templates
+    "**/env.example.*": "dotenv", // handles 1password templates
+    "**/compose.*.tpl": "yaml", // handles 1password templates
+    "**/env.*.tpl": "dotenv", // handles 1password templates
+    "**/*.html": "jinja-html",
+    "**/*.sql": "jinja-sql",
+    "**/*.pgsql": "jinja-sql",
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "jinja-html": "html"
+  },
+    "emmet.includeLanguages": {
+    "jinja-html": "html"
+  },
+}

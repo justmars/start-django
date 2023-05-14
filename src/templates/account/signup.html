@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n account start %}
+{% block title %}{% trans "Sign Up" %}{% endblock title %}
+{% block content %}
+  {% include '_msg.html' with messages=form.non_field_errors %}
+  {% trans "Sign Up" as heading %}
+  {% blocktrans asvar caption %}Already have an account? Then please <a class="underline underline-offset-4 decoration-sky-500" href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+  {% include 'text/header_fragment.html' with heading=heading caption=caption cta='account/_custom/_signup_cta.html' %}
+{% endblock content %}
