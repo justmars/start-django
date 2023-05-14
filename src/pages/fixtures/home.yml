@@ -15,10 +15,10 @@ home:
       url: https://mv3.dev/django-fragments/fragments/hput
     - icon_name: chevron_up_down
       label: Complexed select field
-      url: https://mv3.dev/start-django/components/start/select.md
+      url: https://mv3.dev/django-fragments/architectures/listbox
     - icon_name: bell
       label: Messages + htmx
-      url: https://mv3.dev/start-django/components/start/msg.md
+      url: https://mv3.dev/django-fragments/architectures/alert
   - order: 2
     caption: cloudflare, postmark, social
     headline: Auth User+
@@ -27,19 +27,19 @@ home:
     links:
     - icon_name: user_circle
       label: Pre-templated django-allauth logic
-      url: https://mv3.dev/start-django/setup/auth-social/
+      url: https://mv3.dev/start-django/setup/auth-social
     - icon_name: user_plus
       label: Google + Github auth setup
-      url: https://mv3.dev/start-django/setup/auth-social/
+      url: https://mv3.dev/start-django/setup/auth-social
     - icon_name: photo
       label: Avatars via Cloudflare Images
-      url: https://mv3.dev/start-django/setup/cloudflare-images/
+      url: https://mv3.dev/start-django/setup/cloudflare-images
     - icon_name: at_symbol
       label: Transactional emails c/o Postmark
-      url: https://mv3.dev/start-django/setup/email-postmark/
+      url: https://mv3.dev/start-django/setup/email-postmark
     - icon_name: database
       label: Profile connected to Consent
-      url: https://mv3.dev/start-django/setup/user-model/
+      url: https://mv3.dev/start-django/setup/user-model
   - order: 3
     caption: dev | test | prod
     headline: Deploy fly.io
@@ -48,10 +48,10 @@ home:
     links:
     - icon_name: list_bullet
       label: Test locally with compose.yml
-      url: https://mv3.dev/start-django/contexts/container.md
+      url: https://mv3.dev/start-django/contexts/container
     - icon_name: paper_airplane
       label: Deploy with either sqlite or postgres
-      url: https://mv3.dev/start-django/deploy/config
+      url: https://mv3.dev/start-django/deploy/prep
     - icon_name: wrench_screwdriver
       label: Manage with preset environments
       url: https://mv3.dev/start-django/references/settings/#environment-switcher

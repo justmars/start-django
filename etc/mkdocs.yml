@@ -47,11 +47,7 @@ nav:
     - Repo: contexts/repo.md
     - Container: contexts/container.md
     - Site: contexts/site.md
-  - UI:
-    - Design Choices: components/design.md
-    - Template Fragments:
-      - sel: components/start/select.md
-      - alert: components/start/msg.md
+  - Design: design.md
   - Deploy:
     - Fly.io:
       - Prep: deploy/prep.md

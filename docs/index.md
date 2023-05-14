@@ -7,11 +7,11 @@ hide:
 [start-django.fly.dev](https://start-django.fly.dev) :simple-python: `^3.11` :simple-django: `4.2` + :material-airballoon: `fly.io` personal boilerplate, ft.:
 
 1. UI from [django-fragments](https://github.com/justmars/django-fragments) attempting [locality-of-behavior](https://htmx.org/essays/locality-of-behaviour/):
-      1. [`{% icon %}`](./components/design.md#django-fragments-for-skeletal-partials) - `<svg>` tag combiner
-      2. [`{% themer %}`](./components/design.md#django-fragments-for-skeletal-partials) - `<button onclick=toggleTheme()>` enclosing  two `{% icon %}s`.
-      3. [`{% hput %}`](./components/design.md#django-fragments-for-skeletal-partials) - [TailwindCSS](https://tailwindcss.com/) + [widget-tweakable](https://github.com/jazzband/django-widget-tweaks) `<input>`
-      4. [`{% sel %}`](./components/start/select.md) - [hyperscript](https://hyperscript.org) w/ aria-* `<select>`
-      5. [`{% include '_msg.html' ... %}`](./components/start/msg.md) - :simple-django:-[htmx](https://htmx.org) messages
+      1. [`{% icon %}`](https://mv3.dev/django-fragments/icon) - `<svg>` tag combiner
+      2. [`{% themer %}`](https://mv3.dev/django-fragments/themer) - `<button onclick=toggleTheme()>` enclosing  two `{% icon %}s`.
+      3. [`{% hput %}`](https://mv3.dev/django-fragments/hput) - [TailwindCSS](https://tailwindcss.com/) + [widget-tweakable](https://github.com/jazzband/django-widget-tweaks) `<input>`
+      4. [`{% sel %}`](https://mv3.dev/django-fragments/architectures/listbox) - [hyperscript](https://hyperscript.org) w/ aria-* `<select>`
+      5. [`{% include '_msg.html' ... %}`](https://mv3.dev/django-fragments/architectures/alert) - :simple-django:-[htmx](https://htmx.org) messages
 2. Deployable [fly.toml](./deploy/prep.md) based on [compose.yml](./contexts/container.md) `services`:
       1. `web`: :simple-django: toggle [settings](./references/settings.md): _dev_ | _test_ | _prod_
       2. `db`: _sqlite_ default, _postgres_-[configurable](./setup//use-postgres.md)
@@ -86,7 +86,7 @@ hide:
     1. [Personalize installation](./references/personalization.md)
     2. [Setup services](./setup/summary.md)
     3. [Review settings](./)
-    4. [Evaluate design](./components/design.md)
+    4. [Evaluate design](./design.md)
     5. [Consider contexts](./contexts/overview.md)[^1], e.g. [containers](./contexts/container.md)
     6. [Deploy site](./deploy/prep.md)
 

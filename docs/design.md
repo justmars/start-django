@@ -49,7 +49,7 @@ It also becomes easier to implement a custom partial template, particularly with
 
 Most of the declarations of utility classes generally happen in common html files.
 
-The definitions of these declarations are automatically made in a single `output.css` file, assuming the [build step](../references/tailwind-setup.md) is running.
+The definitions of these declarations are automatically made in a single `output.css` file, assuming the [build step](./references/tailwind-setup.md) is running.
 
 However, the `input.css` makes initial adjustments to commonly styled elements:
 
@@ -212,5 +212,32 @@ The layout of DOM nodes of html partials is handled by [django-fragments](https:
 
 There are some fragments however that cannot be easily separated from the css and javascript involved. They're defined in the `page`'s app and the `base.html` rather than in a third-party library like `django-fragments`. Consider:
 
-1. [`{% sel %}`](./start/select.md) - aria-* and [hyperscript](https://hyperscript.org)ed `<select>`
-2. [`{% include '_msg.html' ...  %}`](./start/msg.md) - :simple-django: messages as alerts
+1. [`{% sel %}`](https://mv3.dev/django-fragments/architectures/listbox) - aria-* and [hyperscript](https://hyperscript.org)ed `<select>`
+
+    ```jinja title="Invocation" linenums="1" hl_lines="1 6"
+    {% load start %}{# (1) #}
+    <form>
+      {% hput fld=form.first_name cover="col-span-12 sm:col-span-3" %}
+      {% hput fld=form.last_name cover="col-span-12 sm:col-span-3" %}
+      {# (2) #}
+      {% sel form.suffix idx='sfx-id' cover="col-span-12 sm:col-span-3" %}
+      ...
+    </form>
+    ```
+
+    1. Custom template tag from the "pages" app. See `src/pages/templatetags`.
+    2. It's different from `input` since the template creates a faux select field with a `<div>` rather than using the native `<select>`. Since there can be many select fields in a given parent template, I introduce an identifier `idx` to explicitly segregate fields.
+
+2. [`{% include '_msg.html' ...  %}`](https://mv3.dev/django-fragments/architectures/alert) - :simple-django: messages as alerts
+
+    This adopts the architecure for messages in [django-fragments](https://justmars.github.io/django-fragments)' `msg.html` to create a global alerts center so that [hyperscripted](https://hyperscript.org)-notifications can be added after an [htmx](https://htmx.org) swap.
+
+    ```jinja title="Invocation" linenums="1" hl_lines="1 3"
+    {% load start %} {# (1) #}
+    {% block content %}
+      {% include '_msg.html' with messages=form.non_field_errors %} {# (2) #}
+    {% endblock content %}
+    ```
+
+    1. Custom template tag from the "pages" app. See `src/pages/templatetags`.
+    2. Assuming template fragment of `HttpResponse` contains a `form`, I can isolate `non_field_errors` to render them as messages.

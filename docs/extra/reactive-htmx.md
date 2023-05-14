@@ -98,4 +98,4 @@ On `form_invalid()`, if a _non-field error_ occurs, we return the form instance 
 
 What is an example of a _non-field_ error? Consider a login form with `email` and `password` fields. The user can supply a random value that is valid, i.e. an email address that is properly formatted, i.e. _john@thisdoesnotexist.com_ However, what if that email address doesn't exist in the database? This would result in a non-field error.
 
-In dealing with such errors, the conventional way of displaying the same is by highlighting the non-field errors above the form. See :simple-django: [Rendering fields manually](https://docs.djangoproject.com/en/dev/topics/forms/#rendering-fields-manually). In contrast, see [Messages as Styled Notifications](../components/start/msg.md#django-messages-as-alerts)
+In dealing with such errors, the conventional way of displaying the same is by highlighting the non-field errors above the form. See :simple-django: [Rendering fields manually](https://docs.djangoproject.com/en/dev/topics/forms/#rendering-fields-manually). In contrast, see [Messages as Styled Notifications](https://mv3.dev/django-fragments/architectures/alert)
