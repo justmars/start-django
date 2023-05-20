@@ -65,7 +65,6 @@ nav:
     - Why: extra/why.md
     - Request-Response: extra/request-response.md
     - Production Server: extra/production-server.md
-    - web.dev Injection: extra/web.md
     - Reactive HTMX: extra/reactive-htmx.md
 extra:
   homepage: https://mv3.dev

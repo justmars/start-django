@@ -1,4 +1,5 @@
 {
+  "editor.stickyScroll.enabled": true,
   "editor.fontLigatures": true,
   "editor.quickSuggestions": {
     "strings": true

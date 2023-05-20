@@ -1,15 +1,5 @@
 # Local
 
-## Setting up environment with dependencies
-
-There are many python-based packaging / dependency solutions.
-
-The setup instructions of this boilerplate relies on `poetry` as a means of orchestrating the setup.
-
-I've moved from `Pipfile` to plain `requirements.txt` to `pyproject.toml` over the last few years but there doesn't seem to be much consensus on how to finalize dependencies. I settled on `poetry` because I liked the fact that it was an early supporter of `pyproject.toml` but it seems like the way this file should be built, populated, run... is still [very much in contention in the community](https://lwn.net/Articles/924114/).
-
-`poetry` seems like the safe winner here since it's nearing 25k stars on Github but the same could have been said of `pipenv` early on (the latter is now nearing 24k stars).
-
 ## Getting it to run and look nice
 
 1. Configure initial [settings](../references/settings.md) to run on local machine

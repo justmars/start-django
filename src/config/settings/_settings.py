@@ -65,8 +65,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 # SECURITY
 BASE_HOSTS = "0.0.0.0,127.0.0.1,.localhost,testserver"
 ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", BASE_HOSTS).split(",")
-if trusted := env("DJANGO_CSRF_TRUSTED_ORIGINS", None):
-    CSRF_TRUSTED_ORIGINS = trusted.split(",")
 
 
 # DATABASE

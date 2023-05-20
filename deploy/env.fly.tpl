@@ -1,6 +1,5 @@
 DJANGO_SECRET_KEY=op://dev/start-django/django/secret_key
 DJANGO_ALLOWED_HOSTS=op://dev/start-django/django/allowed_hosts
-DJANGO_CSRF_TRUSTED_ORIGINS=op://dev/start-django/django/csrf_trusted_origins
 
 EMAIL_RECIPIENT=op://dev/start-django/email/recipient
 EMAIL_SENDER=op://dev/start-django/email/sender

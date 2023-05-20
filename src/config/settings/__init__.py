@@ -13,9 +13,10 @@ match ENV_NAME := env("ENV_NAME", "dev").lower():
     case "test":
         SECRET_KEY = env("DJANGO_SECRET_KEY")  # errors out, if not set
         check_auth()  # errors out if social auth and email check fails
-        if DEBUG := env.bool("DJANGO_DEBUG", False):  # overrideable
+        if DEBUG := env.bool("DJANGO_DEBUG", False):  # override possible
             INTERNAL_IPS = ALLOWED_HOSTS  # debug-toolbar in staging
         EMAIL_BACKEND = "postmark.django_backend.EmailBackend"
+        SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
     case "prod":
         SECRET_KEY = env("DJANGO_SECRET_KEY")  # errors out, if not set

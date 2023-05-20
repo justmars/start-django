@@ -89,5 +89,3 @@ hide:
     4. [Evaluate design](./design.md)
     5. [Consider contexts](./contexts/overview.md)[^1], e.g. [containers](./contexts/container.md)
     6. [Deploy site](./deploy/prep.md)
-
-    [^1]: I'll use _context_ here to denote aspects of my take on :simple-django: programming. I'm not certain if a term exists to describe what I mean but I'm sure _context_ is as good as any. Although I have a degree in computer science, I'm largely self-taught, re-learning how to code these last few years so... so I may have missed out on the evolved nomenclature of these new shiny things of the web.

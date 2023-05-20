@@ -48,10 +48,6 @@ DJANGO_SECRET_KEY="key-generated-with-random-characters" # (1)
 
 This is what populates :simple-django: [`ALLOWED_HOSTS`](https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts).
 
-### `DJANGO_CSRF_TRUSTED_ORIGINS`
-
-Set this in test / production environments to set [`CSRF_TRUSTED_ORIGINS`](https://docs.djangoproject.com/en/dev/ref/settings/#csrf-trusted-origins)
-
 ## Database
 
 ### `DATABASE_URL`

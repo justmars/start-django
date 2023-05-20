@@ -62,13 +62,12 @@
     ```
 
 === "fly: <your-site>.fly.dev"
-    ```py title="/deploy/env.fly.tpl: secret references are expanded via 1Password cli" linenums="1" hl_lines="1 2 3 12 13 14 15 22"
+    ```py title="/deploy/env.fly.tpl: secret references are expanded via 1Password cli" linenums="1" hl_lines="1 2 11 12 13 14 21"
     # Note the change of secrets from test re: Google, Github, new url = new tokens
     # Note new REDIS_URL from test
     # Note absence of DATABASE_URL, set independently by fly.io
     DJANGO_SECRET_KEY=op://dev/start-django/django/secret_key
     DJANGO_ALLOWED_HOSTS=op://dev/start-django/django/allowed_hosts
-    DJANGO_CSRF_TRUSTED_ORIGINS=op://dev/start-django/django/csrf_trusted_origins
 
     EMAIL_RECIPIENT=op://dev/start-django/email/recipient
     EMAIL_SENDER=op://dev/start-django/email/sender

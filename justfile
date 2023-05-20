@@ -87,7 +87,7 @@ run:
 # --- DOCKER COMPOSE
 # ---
 
-# 1password: inject secrets from to root
+# 1password: inject secrets from 1password to root env file
 dumpenv:
   op inject -i ./etc/env.example.0.dev-op -o .env
 
