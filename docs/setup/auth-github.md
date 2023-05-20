@@ -26,12 +26,7 @@
     Field | Value
     --:|:--
     Homepage url | e.g. `https`://start-django.fly.dev
-    Callback url | e.g. `http`://start-django.fly.dev/accounts/github/login/callback/
-
-
-    !!! warning "An error occurred while attempting to login via your social network account."
-
-        I seem to be receiving redirect mismatch errors. Replacing `https://` with `http://` in the _callback url_ solves the issue. But see [discussion](https://stackoverflow.com/questions/25824598/django-allauth-not-sending-links-with-https); also see AllAuth Advanced Usage in the [docs](https://stackoverflow.com/questions/25824598/django-allauth-not-sending-links-with-https).
+    Callback url | e.g. `https`://start-django.fly.dev/accounts/github/login/callback/
 
 ## AllAuth
 
