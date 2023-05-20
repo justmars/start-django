@@ -18,7 +18,8 @@ class User(AbstractUser):
     def get_social_url(self) -> str | None:
         socials = self.socialaccount_set  # type: ignore ; see django-allauth
         if socials.count():  # type: ignore ; see django-allauth
-            return set_base_img_url(socials.first().get_avatar_url())
+            if url := socials.first().get_avatar_url():
+                return set_base_img_url(url)
         return None
 
 
