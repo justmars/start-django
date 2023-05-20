@@ -21,7 +21,7 @@
         <link rel="next" href="../ide/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
@@ -599,13 +599,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-up-environment-with-dependencies" class="md-nav__link">
-    Setting up environment with dependencies
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#getting-it-to-run-and-look-nice" class="md-nav__link">
     Getting it to run and look nice
   </a>
@@ -786,106 +779,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-          UI
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          UI
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../components/design/" class="md-nav__link">
-        Design Choices
+      <a href="../../design/" class="md-nav__link">
+        Design
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-          Template Fragments
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_2">
-          <span class="md-nav__icon md-icon"></span>
-          Template Fragments
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../components/start/select/" class="md-nav__link">
-        sel
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../components/start/msg/" class="md-nav__link">
-        alert
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -1211,20 +1108,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../extra/web/" class="md-nav__link">
-        web.dev Injection
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../extra/reactive-htmx/" class="md-nav__link">
         Reactive HTMX
       </a>
@@ -1264,13 +1147,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-environment-with-dependencies" class="md-nav__link">
-    Setting up environment with dependencies
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#getting-it-to-run-and-look-nice" class="md-nav__link">
@@ -1380,11 +1256,6 @@
 
 
 <h1 id="local">Local</h1>
-<h2 id="setting-up-environment-with-dependencies">Setting up environment with dependencies</h2>
-<p>There are many python-based packaging / dependency solutions.</p>
-<p>The setup instructions of this boilerplate relies on <code>poetry</code> as a means of orchestrating the setup.</p>
-<p>I've moved from <code>Pipfile</code> to plain <code>requirements.txt</code> to <code>pyproject.toml</code> over the last few years but there doesn't seem to be much consensus on how to finalize dependencies. I settled on <code>poetry</code> because I liked the fact that it was an early supporter of <code>pyproject.toml</code> but it seems like the way this file should be built, populated, run... is still <a href="https://lwn.net/Articles/924114/">very much in contention in the community</a>.</p>
-<p><code>poetry</code> seems like the safe winner here since it's nearing 25k stars on Github but the same could have been said of <code>pipenv</code> early on (the latter is now nearing 24k stars).</p>
 <h2 id="getting-it-to-run-and-look-nice">Getting it to run and look nice</h2>
 <ol>
 <li>Configure initial <a href="../../references/settings/">settings</a> to run on local machine</li>
@@ -1539,7 +1410,7 @@ and it will adopt the configuration declared in pyproject.toml :</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>
