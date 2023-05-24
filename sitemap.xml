@@ -1,173 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://mv3.dev/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/design/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/design/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/contexts/container/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/contexts/container/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/contexts/ide/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/contexts/ide/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/contexts/local/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/contexts/local/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/contexts/overview/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/contexts/overview/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/contexts/repl/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/contexts/repl/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/contexts/repo/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/contexts/repo/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/contexts/site/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/contexts/site/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/deploy/config/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/deploy/config/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/deploy/deploy/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/deploy/deploy/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/deploy/do/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/deploy/do/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/deploy/prep/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/deploy/prep/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/extra/production-server/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/extra/production-server/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/extra/reactive-htmx/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/extra/reactive-htmx/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/extra/request-response/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/extra/request-response/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/extra/why/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/extra/why/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/references/conventions/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/references/conventions/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/references/env-vars/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/references/env-vars/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/references/gotchas/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/references/gotchas/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/references/personalization/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/references/personalization/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/references/settings/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/references/settings/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/references/tailwind-setup/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/references/tailwind-setup/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/auth-email/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/auth-email/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/auth-fb/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/auth-fb/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/auth-github/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/auth-github/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/auth-google/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/auth-google/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/auth-social/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/auth-social/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/background-tasks/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/background-tasks/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/cloudflare-images/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/cloudflare-images/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/email-postmark/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/email-postmark/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/summary/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/summary/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/use-postgres/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/use-postgres/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mv3.dev/setup/user-model/</loc>
-         <lastmod>2023-05-20</lastmod>
+         <loc>https://justmars.github.io/setup/user-model/</loc>
+         <lastmod>2023-05-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
