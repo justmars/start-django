@@ -56,6 +56,7 @@ hide:
     --output src/requirements.txt \
     && poetry shell # (4)
 
+    test -d src/data || mkdir src/data
     cd src
     python manage.py makemigrations # (5)
     python manage.py migrate # (6)

@@ -64,6 +64,7 @@ press:
 
 # set db
 db:
+  test -d src/data || mkdir src/data
   cd src && python manage.py makemigrations
   cd src && python manage.py migrate
 
