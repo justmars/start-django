@@ -1,6 +1,6 @@
 site_name: start-django Docs
 site_description: Django + fly.io, styled by Tailwind, htmx-ed
-site_url: https://mv3.dev
+site_url: https://justmars.github.io
 site_author: Marcelino Veloso III
 repo_url: https://github.com/justmars/start-django
 docs_dir: "../docs"
