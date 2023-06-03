@@ -30,17 +30,17 @@ pyyaml = "^6.0"                     # tooling: used in fixtures
 python-dateutil = "^2.8.2"          # tooling: date parsing
 django-debug-toolbar = "^4.0.0"     # dev: debug
 django-extensions = "^3.2.1"        # dev: multi-purpose
-rich = "^13.3.5"                    # dev: shell formatting / colors
+rich = "^13.4"                    # dev: shell formatting / colors
 gunicorn = "^20.1.0"                # prod: server
 sentry-sdk = "^1.21.0"              # prod: logging
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.2"
+pytest = "^7.3"
 pytest-django = "^4.5.1"
-pytest-cov = "^2.12.1"
-pre-commit = "^2.21"
+pytest-cov = "^4.1"
+pre-commit = "^3.3"
 mkdocs = "^1.4.2"
-mkdocstrings = { extras = ["python"], version = "^0.20.0" }
+mkdocstrings = { extras = ["python"], version = "^0.22.0" }
 mkdocs-material = "^9.1"
 djhtml = "3.0.6"
 ipykernel = "^6.22.0"
