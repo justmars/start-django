@@ -25,7 +25,6 @@ primary_region = "sin"
   processes = ["web"]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = true
   auto_start_machines = true
 
 [[statics]]

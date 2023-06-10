@@ -82,7 +82,7 @@ sh:
 
 # runserver_plus: django extensions, may require dumpenv
 run:
-  open -a "Brave Browser.app" http://127.0.0.1:8000/ && cd src && python manage.py runserver_plus
+  open http://127.0.0.1:8000/ && cd src && python manage.py runserver_plus
 
 # ---
 # --- DOCKER COMPOSE
