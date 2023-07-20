@@ -3,7 +3,7 @@
   <div class="py-4 px-4 sm:py-12 sm:px-10">
     <a href="https://github.com/{{repo.owner_name}}/{{repo.repo_name}}" class="focus:outline-none group/sub" target="blank">
       <div class="overflow-hidden relative group-hover/main:backdrop-blur-sm group-focus/sub:backdrop-blur-sm">
-        <img width=560 height=280 class="mx-auto rounded-md animate-pulse group-hover/main:opacity-30 group-hover/main:grayscale group-focus/sub:opacity-30 group-focus/sub:grayscale" src="{{repo.og_image}}" {% if forloop.counter > 6 %}loading="lazy"{% endif %} alt="An open graph image from Github of {{repo.repo_name}}">
+        <img width=560 height=280 class="mx-auto rounded-md group-hover/main:opacity-30 group-hover/main:grayscale group-focus/sub:opacity-30 group-focus/sub:grayscale" src="{{repo.og_image}}" {% if forloop.counter > 6 %}loading="lazy"{% endif %} alt="An open graph image from Github of {{repo.repo_name}}">
         <div class="flex absolute right-0 left-0 top-1/2 items-end mx-4 opacity-0 group-hover/main:opacity-100 group-focus/sub:opacity-100" aria-hidden="true">
           <div class="py-2 px-4 w-full text-sm font-medium text-center text-gray-200 bg-opacity-75 rounded-md bg-dawn-darker dark:bg-fuchsia-400/90">View on Github</div>
         </div>

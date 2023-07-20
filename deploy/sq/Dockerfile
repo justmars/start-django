@@ -5,7 +5,7 @@ RUN apt update \
   && apt clean
 
 ARG sqlite_year=2023
-ARG sqlite_ver=3410200
+ARG sqlite_ver=3420000
 RUN wget https://www.sqlite.org/$sqlite_year/sqlite-autoconf-$sqlite_ver.tar.gz \
   && tar xzf sqlite-autoconf-$sqlite_ver.tar.gz && rm sqlite-autoconf-$sqlite_ver.tar.gz \
   && ./sqlite-autoconf-$sqlite_ver/configure --disable-static --enable-fts5 --enable-json1 CFLAGS="-g -O2 -DSQLITE_ENABLE_JSON1" \
